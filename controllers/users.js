@@ -120,7 +120,9 @@ module.exports = {
     //Save the car
     await newCar.save();
     //Add car to the user`s selling array 'cars'
-    user.cars.push(newCar);
+    console.log('typeof newCar', typeof newCar);
+    console.log('typeof newCar.toObject', typeof (newCar.toObject()));
+    user.cars.push(newCar.toObject());
     //Save the user
     await user.save();
     res.status(200).json(newCar);
