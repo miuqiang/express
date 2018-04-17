@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 //Routes
 app.use('/api',users);
 
-//Cathc 404 Error and forward them to error handler
+//Catch 404 Error and forward them to error handler
 app.use((req, res, next) => {
   const err = new Error('Not found');
   err.status = 404;
