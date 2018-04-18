@@ -65,13 +65,9 @@ module.exports = {
   },
 
   newUser: async (req, res, next) => {
-    try {
-      const newUser = new User(req.body);
+      const newUser = new User(req.value.body);
       const user = await newUser.save();
       res.status(201).json(user);
-    } catch (err) {
-      next(err);
-    }
   },
 
   getUser: async (req, res, next) => {
