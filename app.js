@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/apiproject');
@@ -33,6 +34,7 @@ app.use((err, req, res, next) => {
   const status = err.status || 500;
 
   //Respond to client
+  alert(1);
   res.status(status).json({
     error: {
       message: error.message
