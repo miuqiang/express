@@ -19,7 +19,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 
 //Routes
-app.use('/api',users);
+app.use('/v1',users);
 
 //Catch 404 Error and forward them to error handler
 app.use((req, res, next) => {
@@ -34,7 +34,6 @@ app.use((err, req, res, next) => {
   const status = err.status || 500;
 
   //Respond to client
-  alert(1);
   res.status(status).json({
     error: {
       message: error.message

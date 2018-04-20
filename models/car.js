@@ -9,7 +9,7 @@ const carSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'user'
   }
-});
+},{versionKey: false});
 
 const Car = mongoose.model('car', carSchema);
 module.exports = Car;
