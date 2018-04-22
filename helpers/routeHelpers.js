@@ -44,6 +44,7 @@ module.exports = {
       email: Joi.string().email().required()
 
     }),
+    
     idSchema: Joi.object().keys({
       params: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required()
     })
